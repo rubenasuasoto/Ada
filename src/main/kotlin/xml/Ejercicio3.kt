@@ -113,7 +113,7 @@ class Empresa {
 
                 val atributoId = nodoElemento.getAttribute("id")
 
-                // Comprobar si los elementos existen antes de acceder
+
                 val elementoApellido = nodoElemento.getElementsByTagName("apellido").item(0)?.textContent
                 val elementoDepartamento = nodoElemento.getElementsByTagName("departamento").item(0)?.textContent
                 val elementoSalario = nodoElemento.getElementsByTagName("salario").item(0)?.textContent
