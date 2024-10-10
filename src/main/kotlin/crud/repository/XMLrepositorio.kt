@@ -55,6 +55,8 @@ class XMLrepositorio {
 
         val transformer: Transformer = TransformerFactory.newInstance().newTransformer()
         transformer.setOutputProperty(OutputKeys.INDENT, "yes")
+        transformer.setOutputProperty(OutputKeys.METHOD, "yes")
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes")
 
         transformer.transform(source, result)
     }
