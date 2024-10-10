@@ -23,7 +23,7 @@ class XMLrepositorio {
         }
         if (newEmpleado.id.isNullOrBlank()||
             newEmpleado.apellido.isNullOrBlank()||
-            newEmpleado.dept.isNullOrBlank()){
+            newEmpleado.departamento.isNullOrBlank()){
             throw Exception("Atributos correctos ")
 
         }
@@ -39,9 +39,9 @@ class XMLrepositorio {
         val departamento: Element = document.createElement("departamento")
         val salario: Element = document.createElement("salario")
 
-        val textoApellido: Text = document.createTextNode(newEmpleado.apellido)
-        val textoDepartamento: Text = document.createTextNode(newEmpleado.dept)
-        val textoSalario: Text = document.createTextNode(newEmpleado.salario)
+        val textoApellido = document.createTextNode(newEmpleado.apellido)
+        val textoDepartamento = document.createTextNode(newEmpleado.departamento)
+        val textoSalario = document.createTextNode(newEmpleado.salario)
         apellido.appendChild(textoApellido)
         departamento.appendChild(textoDepartamento)
         salario.appendChild(textoSalario)
@@ -49,14 +49,16 @@ class XMLrepositorio {
         elementoNuevoEmpleado.appendChild(apellido)
         elementoNuevoEmpleado.appendChild(departamento)
         elementoNuevoEmpleado.appendChild(salario)
-        document.documentElement.appendChild(elementoNuevoEmpleado)
-        val source: Source = DOMSource(document)
-        val result = StreamResult(Path.of("src/main/resources/empleado.xml").toFile())
+        root.appendChild(elementoNuevoEmpleado)
 
-        val transformer: Transformer = TransformerFactory.newInstance().newTransformer()
+        val source: Source = DOMSource(document)
+        val result = StreamResult(rutaXml.toFile())
+
+
+        val transformer = TransformerFactory.newInstance().newTransformer()
         transformer.setOutputProperty(OutputKeys.INDENT, "yes")
-        transformer.setOutputProperty(OutputKeys.METHOD, "yes")
-        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes")
+        transformer.setOutputProperty(OutputKeys.METHOD, "xml")
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no")
 
         transformer.transform(source, result)
     }
