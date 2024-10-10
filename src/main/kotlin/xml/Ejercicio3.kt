@@ -92,6 +92,9 @@ class Empresa {
         val result = StreamResult(rutaXml.toFile())
         val transformer: Transformer = TransformerFactory.newInstance().newTransformer()
         transformer.setOutputProperty(OutputKeys.INDENT, "yes")
+        transformer.setOutputProperty(OutputKeys.METHOD, "xml")
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no")
+
         transformer.transform(source, result)
     }
     fun leerArchivoXml() {

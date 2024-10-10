@@ -3,7 +3,6 @@
 import crud.model.Empleado
 import org.w3c.dom.Document
 import org.w3c.dom.Element
-import org.w3c.dom.Text
 import java.nio.file.Path
 import javax.xml.parsers.DocumentBuilderFactory
 import javax.xml.transform.OutputKeys
@@ -56,6 +55,30 @@ class XMLrepositorio {
 
 
         val transformer = TransformerFactory.newInstance().newTransformer()
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes")
+        transformer.setOutputProperty(OutputKeys.METHOD, "xml")
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no")
+
+        transformer.transform(source, result)
+    }
+    fun delete(id: String, rutaXml: Path) {
+        val document = parseXML(rutaXml)
+        val empleados = document.getElementsByTagName("empleado")
+
+        var found = false
+
+        for (i in 0 until empleados.length) {
+            val empleado = empleados.item(i) as Element
+            if (empleado.getAttribute("id") == id) {
+                empleado.parentNode.removeChild(empleado)
+                found = true
+
+            }
+        }
+
+        val source: Source = DOMSource(document)
+        val result = StreamResult(rutaXml.toFile())
+        val transformer: Transformer = TransformerFactory.newInstance().newTransformer()
         transformer.setOutputProperty(OutputKeys.INDENT, "yes")
         transformer.setOutputProperty(OutputKeys.METHOD, "xml")
         transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no")
