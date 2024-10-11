@@ -65,13 +65,13 @@ class XMLrepositorio {
         val document = parseXML(rutaXml)
         val empleados = document.getElementsByTagName("empleado")
 
-        var found = false
+
 
         for (i in 0 until empleados.length) {
             val empleado = empleados.item(i) as Element
             if (empleado.getAttribute("id") == id) {
                 empleado.parentNode.removeChild(empleado)
-                found = true
+
 
             }
         }
