@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    implementation("org.hibernate:hibernate-core:6.6.0.Final")
 }
 
 tasks.test {
