@@ -1,0 +1,5 @@
+﻿package hibernate
+
+fun main(){
+
+}

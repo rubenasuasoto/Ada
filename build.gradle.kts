@@ -12,7 +12,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation("org.hibernate:hibernate-core:6.6.0.Final")
-    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+
     implementation("mysql:mysql-connector-java:8.0.33")
 
 }
