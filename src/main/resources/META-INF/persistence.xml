@@ -3,8 +3,8 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0">
 
-    <persistence-unit name="unidad-MySQL" >
-
+    <persistence-unit name="unidad-MySQL" transaction-type="RESOURCE_LOCAL" >
+    <class>hibernate.Empleado</class>
 
         <properties>
             <!-- Propiedades JDBC -->
@@ -14,9 +14,9 @@
             <property name="javax.persistence.jdbc.password" value="" />
             <!-- Configuracion específicas de Hibernate -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
-            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.hbm2ddl.auto" value="create" />
             <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
+
         </properties>
     </persistence-unit>
 </persistence>

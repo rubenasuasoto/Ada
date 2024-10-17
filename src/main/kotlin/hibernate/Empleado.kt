@@ -17,10 +17,4 @@ class Empleado(
     @Column
     val edad: Int
 
-){
-    constructor() : this() {
-
-    }
-
-
-}
+)
