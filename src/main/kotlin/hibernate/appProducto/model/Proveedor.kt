@@ -11,10 +11,10 @@ data class Proveedor(
     val id: Long = 0,
 
     @Column(unique = true, nullable = false, length = 50)
-    var nombre: String,
+    var nombre: String = "",
 
     @Column(nullable = false)
-    var direccion: String,
+    var direccion: String = "",
 
     @OneToMany(mappedBy = "proveedor", cascade = [CascadeType.ALL])
     var productos: List<Producto>? = null
