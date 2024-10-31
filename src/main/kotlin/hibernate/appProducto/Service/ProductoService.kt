@@ -17,8 +17,8 @@ class ProductoService(val productoDao: ProductoRepository) {
         println("Ingrese Descripción del Producto: ")
         val descripcionProducto = readln()
         println("Ingrese Stock del Producto: ")
-
         val stockProducto = readln().toIntOrNull() ?: return
+
         val precioConIva = (precioSinIva + (precioSinIva * 0.21)).toFloat()
         val fechaProducto = Date()
         val idProducto = HacerID(nombreProducto,categoriaProducto,proveedor.nombre)

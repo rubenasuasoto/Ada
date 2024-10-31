@@ -9,7 +9,7 @@ import hibernate.appProducto.repository.UsuarioRepository
 import kotlin.system.exitProcess
 
 fun main() {
-    var login = false  // Variable para verificar el estado de login
+    var login = true  // Variable para verificar el estado de login
 
     do {
         println(
