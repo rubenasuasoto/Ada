@@ -1,4 +1,4 @@
-﻿package hibernate.appInstituto
+﻿package hibernate.appInstituto.model
 
 import jakarta.persistence.*
 
@@ -6,8 +6,6 @@ import jakarta.persistence.*
 @Table(name="proveedores")
 data class Proveedor (
 
-    @Column(name="cif", unique = true, nullable = false)
-    val cif: String,
 
     @Column(nullable = false)
     val nombre: String,

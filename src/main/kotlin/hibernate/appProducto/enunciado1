@@ -1,0 +1,16 @@
+﻿1º login
+2º App stock control
+2.1 Alta producto(insert)
+2.2 Baja producto(delete)
+2.3 Modificar nombre producto(update
+2.4 "Stock"
+2.5 obtener 1 producto (findById)
+2.6 producto con stock
+2.7 producto sin stock
+2.8 get proveedor de 1 producto
+2.9 get todos proveedores
+
+id -> 3ºletras -> categoria+nombre+proveedor
+precio_con_iva -> 21% -> * 0.21
+fecha_alta -> hoy
+

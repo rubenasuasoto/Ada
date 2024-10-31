@@ -1,4 +1,4 @@
-﻿package hibernate
+﻿package hibernate.appProducto.model
 
 import jakarta.persistence.*
 
@@ -14,4 +14,4 @@ class Usuario(
 
 
 
-)
+    )

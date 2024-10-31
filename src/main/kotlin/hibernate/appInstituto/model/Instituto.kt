@@ -1,4 +1,4 @@
-﻿package hibernate.appInstituto
+﻿package hibernate.appInstituto.model
 
 import jakarta.persistence.*
 import kotlin.jvm.Transient
